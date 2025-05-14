@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+article p {
+    @apply text-justify;
+}
+article img {
+    @apply w-full max-w-xl mx-auto;
+}
+
+article .embedded-container {
+    @apply grid gap-10;
+    grid-template-columns: auto 1fr;
+}
+article .embedded-container img {
+    @apply w-full max-w-xs mx-auto;
+}
