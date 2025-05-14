@@ -1,1 +1,1 @@
-Velg en artikkel :point-up
+Velg en artikkel !
