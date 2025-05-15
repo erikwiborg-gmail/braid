@@ -1,7 +1,15 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-
+@layer base {
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+}
 article p {
+    font-family: 'Open Sans', sans-serif;
     @apply text-justify;
 }
 article img {

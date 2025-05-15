@@ -1,15 +1,15 @@
 <script lang="ts">
 	import Article from '$lib/Article.svelte';
-	import { type ArticleType } from '$lib/types';
+	import { page } from '$app/state';
 
-	let {
-		data
-	}: {
-		data: {
-			article: ArticleType;
-		};
-	} = $props();
-	let article = $state(data.article);
+	const fetchArticle = async () => {
+		return fetch(`/api/article/${page.params.id}`).then(res => res.json());
+	}
+
 </script>
+{#await fetchArticle()}
+	Loading ...
+{:then article}
+	<Article {article} ></Article>
+{/await}
 
-<Article {article} ></Article>

@@ -8,14 +8,15 @@ Databasen min er en js-fil som inneholder artikkelinnhold. Jeg har ikke priorite
 
 Prosjektet kan kjøres i dev-mode eller bygges som docker image og kjøres som container.
 
-Per nå så er alt SSR (jeg tolket punkt 4 som at dette var ønskelig). Jeg starte med en variant som kalte API fra klient, men det 
-føltes mer oversiktlig å bare ha den ene løsningen. Det er uansett trivielt å skru på CSR hvis det er ønskelig.
+Oppsettet er nå slik at vanlige artikler hentes fra klient-siden, mens de parsonaliserte bruker SSR og leverer ren HTML. 
 
 
 ## Forbedringer
 - [ ] Legge til en faktisk database
 - [ ] Progressiv lasting av artikkelinnhold?
 - [ ] Styling, bla flyte tekst runt embeddede bilder
+- [ ] en eller annen form for skeleton-view mens ny artikkel laster. Går det an med SSR mon tro?
+- 
 
 ## Dev mode: 
 ```bash
@@ -34,7 +35,7 @@ For å se personalisert innhold må du legge til et brukernavn i url-en.
 
 ## Docker
 ```bash
-docker build . -t braid-demo
+docker build . -t braid-demo 
 docker run -d -p 3000:3000 braid-demo
 ```
 `localhost:3000/article/1`
