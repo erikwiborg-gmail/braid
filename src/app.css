@@ -5,13 +5,13 @@ article p {
     @apply text-justify;
 }
 article img {
-    @apply w-full max-w-xl mx-auto;
+    @apply w-full mx-auto mt-10;
 }
 
 article .embedded-container {
-    @apply grid gap-10;
+    @apply grid gap-10 my-10;
     grid-template-columns: auto 1fr;
 }
 article .embedded-container img {
-    @apply w-full max-w-xs mx-auto;
+    @apply w-3xs mx-auto mt-8;
 }

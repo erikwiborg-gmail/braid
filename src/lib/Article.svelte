@@ -11,11 +11,11 @@
 	} = $props();
 
 </script>
-<article class="prose">
+<article class="prose lg:prose-xl">
 	<h1>{article.title}</h1>
 
-	<img src="{article.topImage}" class="w-1/2" alt="Top image of article"/>
-	<p class="font-bold w-1/2">{article.leadText}</p>
+	<img src="{article.topImage}" class="w-full" alt="Top image of article"/>
+	<p class="font-bold w-full">{article.leadText}</p>
 
 	{#if children}
 		<!-- Render whatever is inside the article tag, or the body text if nothing is passed -->

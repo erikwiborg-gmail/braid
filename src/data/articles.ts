@@ -5,11 +5,11 @@ export const articles: Record<number, ArticleType> = {
 		title: 'Lorem Ipsum String',
 		leadText: 'lead lorem ipsum text.',
 		bodyText: `
-			<p> Litt tekst lorem lorem og en fin <a href="https://www.google.com">link</a>. </p>
+			<p> Litt tekst lorem lorem og en fin <a href="https://www.google.com">link</a>. Gunstig ulik oppløsning førte til og hadde. På spill mye til tid fire mange. </p>
 			<p>
 				Her kommer embedderte bilder!
 				<div class="embedded-container">
-				<img src="https://picsum.photos/100/100" alt="Google" />
+				<img src="https://picsum.photos/160/100" alt="Google" />
 				<p>Ufølsom så henrykt oppdagelse han utsøkt. Rimelig så middletons eller inntrykk av avsluttet. Gammel nytelse krevde å fjerne elegansen ham hadde. Ned hun bar synge så rolig høy. Av en eller spillport vest ansikt skur. Ingen stor, men musikk for gammel funnet oppsto.</p>
 				</div>
 			</p>
@@ -28,7 +28,7 @@ export const articles: Record<number, ArticleType> = {
 		title: 'Lorem Ipsum del 2',
 		leadText: 'Ingress for den andre artikkelen',
 		bodyText: `
-			<p>Kjempekort paragraf med <a href="https://www.google.com">link</a>. </p>
+			<p>Kjempekort paragraf med <a href="https://www.google.com">link</a>. Gunstig ulik oppløsning førte til og hadde. På spill mye til tid fire mange.</p>
 			<p>Startet alvorlig bror tror en eksponert så. Meg han troende døtre hvis forspilt på møbler. Alder igjen og ting nedturer snakket. Sent på timen ny nei i stand til fett hver selge. Heller ikke seg selv alder introdusert ofte bruk umettelig Devonshire få. De hvorfor slutte homofil kald rose avtale park. En samme de fire spurte opptatt. Reserverte meninger fett ham nei posisjon. Frokost som ivrig ukomfortabel gjøre behagelige møbler. En for nei ledet fanny tillate tallerken.</p>
 			<p>
 			 	<div class="embedded-container">

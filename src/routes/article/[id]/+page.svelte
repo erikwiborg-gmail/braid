@@ -9,7 +9,7 @@
 			article: ArticleType;
 		};
 	} = $props();
-	let { article } = data;
+	let article = $state(data.article);
 </script>
 
 <Article {article} ></Article>

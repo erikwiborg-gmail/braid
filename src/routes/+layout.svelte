@@ -3,10 +3,12 @@
 
 	let { children } = $props();
 </script>
-<div class="w-1/2 mx-auto my-30 flex flex-col gap-10">
-	<div class="flex flex-row w-full justify-between">
+<div class="w-2/3 mx-auto flex flex-col gap-10">
+	<div class="flex flex-row w-full pt-40 pb-10 px-5 justify-between bg-gray-100">
 		<a href="/article/1">Første Artikkel</a>
 		<a href="/article/2">Andre Artikkel</a>
 	</div>
-{@render children()}
+	<div class="mx-auto">
+		{@render children()}
+	</div>
 </div>
