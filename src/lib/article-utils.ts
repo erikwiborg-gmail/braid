@@ -8,18 +8,23 @@ export type AnnotatedParagraph = {
 	personalisedContent?: string;
 };
 
+// this beautiful regex is all copilot and I will take no responsibility for it.
+// it matches <p> tags and captures the content inside them,
+// Then we add a word count to each paragraph so we can sensibly place personal content
 export const countWordsInParagraphs = (article: ArticleType): AnnotatedParagraph[] => {
-	// this beautiful regex is all copilot and i will take no responsibility for it.
-	// it matches <p> tags and captures the content inside them, adding a word count to each paragraph.
 	return Array.from(
-		article.bodyText.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g),
+		article.bodyText.trim().matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g),
 		(match) => match[1]
 	).map((paragraph) => {
-		const wordCount = paragraph.match(/ /g)?.length || 0;
+		let wordCount = paragraph.match(/ /g)?.length || 0;
+		if (wordCount > 0) {
+			wordCount++; //add an extra word, since there's no space at the end of the text
+		}
 		return { content: paragraph, wordCount };
 	});
 };
 
+// Count words and insert personalised content after paragraph if count exceeds 100, then reset count.
 export const insertPersonalisedContent = (
 	paragraphs: AnnotatedParagraph[],
 	personalised: PersonalisedContent[]
@@ -28,11 +33,11 @@ export const insertPersonalisedContent = (
 	let personalisedContentIndex = 0;
 
 	const copy = [...paragraphs];
-	// count words in each paragraph and add personalised content if the word count is over 100
+
 	copy.forEach((paragraph) => {
 		aggregatedWordCount += paragraph.wordCount;
 		const shouldDisplayPersonalisedContent = aggregatedWordCount >= contentInsertionThreshold;
-		if (shouldDisplayPersonalisedContent) {
+		if (shouldDisplayPersonalisedContent && personalised.length > personalisedContentIndex) {
 			paragraph.personalisedContent = personalised[personalisedContentIndex++].title;
 
 			aggregatedWordCount = 0;
